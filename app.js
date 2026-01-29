@@ -15,16 +15,19 @@ const createRow = (item) => {
     : "";
 
   row.innerHTML = `
+    <td>${item.id}</td>
+    <td>${item.title}</td>
+    <td>${item.slug || ""}</td>
+    <td class="price">${formatPrice(item.price)}</td>
+    <td class="muted">${item.description || ""}</td>
+    <td>${item.category?.name || ""}</td>
     <td>
       <div class="thumb">
         ${imgUrl ? `<img src="${imgUrl}" alt="${item.title}" loading="lazy">` : ""}
       </div>
     </td>
-    <td>${item.title}</td>
-    <td class="price">${formatPrice(item.price)}</td>
-    <td>${item.category?.name || "Không rõ"}</td>
-    <td class="muted">${item.description || ""}</td>
-    <td>${item.id}</td>
+    <td class="muted">${item.creationAt || ""}</td>
+    <td class="muted">${item.updatedAt || ""}</td>
   `;
 
   return row;
