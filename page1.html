@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js" defer></script>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            padding: 6px 10px;
+        }
+
+        .deleted td {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .section {
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <h3>Posts</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        id
+                    </th>
+                    <th>
+                        title
+                    </th>
+                    <th>
+                        views
+                    </th>
+                    <th>
+                        actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="posts-table-body">
+
+            </tbody>
+        </table>
+    </div>
+    <div class="section">
+        <div>
+            <input type="text" placeholder="id (để trống khi tạo mới)" id="post_id_txt" />
+            <input type="text" placeholder="title" id="post_title_txt" />
+            <input type="text" placeholder="views" id="post_views_txt" />
+            <input type="button" value="Save" onclick="savePost()">
+            <input type="button" value="Clear" onclick="clearPostForm()">
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Comments</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>text</th>
+                    <th>postId</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody id="comments-table-body"></tbody>
+        </table>
+    </div>
+    <div class="section">
+        <div>
+            <input type="text" placeholder="id (để trống khi tạo mới)" id="comment_id_txt" />
+            <input type="text" placeholder="text" id="comment_text_txt" />
+            <input type="text" placeholder="postId" id="comment_postId_txt" />
+            <input type="button" value="Save" onclick="saveComment()">
+            <input type="button" value="Clear" onclick="clearCommentForm()">
+        </div>
+    </div>
+</body>
+
+</html>
